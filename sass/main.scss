@@ -1,0 +1,232 @@
+@import 'bourbon/bourbon';
+@import 'sass/normalize';
+
+@include font-face('MrsEavesBoldItalic', '/fonts/MrsEavesBoldItalic/mrs-eaves-bold-italic');
+@include font-face('LeagueGothic', '/fonts/MrsEavesBoldItalic/League_Gothic');
+
+// colors
+$green: #5B8727;
+$lt-green: #E7EEBB;
+$red: #BF301A;
+
+.serif {
+  font-family: 'MrsEavesBoldItalic', Georgia, TimesNewRoman, serif;
+  font-weight: normal;
+}
+
+.sans {
+  font-family: "ronnia-condensed", 'LeagueGothic', Helvetica, sans-serif;
+}
+
+.logo {
+  @extend .serif;
+  font-weight: normal;
+  text-align: center;
+  color: $red;
+  margin: 0 0 20px;
+  font-size: 47px;
+  line-height: 60px;
+  padding: 40px 0 0;
+
+  a {
+    color: inherit;
+    position: relative;
+    text-decoration: none;
+    z-index: 10;
+
+    &:before {
+      content: 'Singing Bird Childcare';
+      position: absolute;
+      top: -9px;
+      left: 2px;
+      color: white;
+      text-shadow: 0 0 5px #666;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: url(/images/bird.png) no-repeat top left;
+      height: 50px;
+      width: 55px;
+      top: -20px;
+      right: -14px;
+    }
+  }
+}
+
+.cta {
+  background: darken($red, 15%);
+}
+
+.cta-container {
+  background: $red;
+  padding: 55px 0 0;
+  width: 1200px;
+  margin: 0 auto;
+  @include radial-gradient(50% 50%, circle cover, $red 40%, darken($red, 16%));
+  position: relative;
+  z-index: 100;
+
+  h2 {
+    @extend .serif;
+    text-shadow: 0 2px 8px darken($red, 20%);
+    margin: 0 0 50px;
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.button {
+  @extend .sans;
+  position: absolute;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 17px;
+  height: 66px;
+  width: 66px;
+  vertical-align: middle;
+  display: inline-block;
+  color: $green;
+  background: white;
+  @include border-radius(50%);
+  border: 2px solid $red;
+  @include box-shadow(0 2px 10px rgba(#333, .5));
+  left: 50%;
+  top: -35px;
+  margin-left: -42px;
+
+  span {
+    vertical-align: middle;
+    padding: 25px 0;
+    display: inline-block;
+  }
+}
+
+.intro, footer {
+  width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 30px 125px;
+  position: relative;
+  @include box-shadow(0 0 30px #999);
+
+  &:before {
+    position: absolute;
+    content: ' ';
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: transparent url(/images/paper.png);
+  }
+
+  * {
+    position: relative;
+    z-index: 100;
+  }
+}
+
+.intro {
+  background: $lt-green;
+  padding-bottom: 47px;
+  font-family: Georgia;
+  color: #666;
+  line-height: 22px;
+  font-size: 14px;
+
+  .accent {
+    font-weight: bold;
+    color: $red;
+    font-style: italic;
+  }
+}
+
+footer {
+  @include linear-gradient($lt-green, lighten($lt-green, 30%));
+  padding: 50px 125px 30px;
+  @extend .sans;
+}
+
+.column1, .column2 {
+  width: 360px;
+  float: left;
+}
+
+.column2 {
+  float: right;
+}
+
+.images {
+  $img-size: 180px;
+  $img-border: 6px;
+  $img-margin: 55px;
+
+  @include clearfix;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  width: (($img-size * 4) + (($img-border * 2) * 4) + ($img-margin * 3));
+
+  li {
+    float: left;
+    margin-right: $img-margin;
+    height: $img-size;
+    width: $img-size;
+    border: $img-border solid white;
+
+    @include box-shadow(2px 5px 20px rgba(#333, .5));
+
+    &.img-1, &.img-3 { @include transform(rotate(-8deg)); }
+    &.img-2, &.img-4 { @include transform(rotate(8deg)); }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    img { height: 100%; }
+  }
+}
+
+.contact {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: #777;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #777;
+  }
+
+  li {
+    margin-bottom: 0;
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  .phone, .email {
+    display: inline-block;
+  }
+
+  .phone {
+    margin-right: 30px;
+  }
+
+  .license {
+    margin: 10px auto 0;
+    padding-top: 10px;
+    width: 180px;
+    border-top: 1px solid $green;
+  }
+}

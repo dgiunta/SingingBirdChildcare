@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+sass --watch sass:public/stylesheets -r ./bourbon/lib/bourbon.rb
