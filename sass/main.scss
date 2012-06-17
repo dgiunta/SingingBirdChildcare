@@ -15,7 +15,7 @@ $red: #BF301A;
 }
 
 .sans {
-  font-family: "ronnia-condensed", 'LeagueGothic', Helvetica, sans-serif;
+  font-family: "ronnia-condensed", Helvetica, sans-serif;
 }
 
 .logo {
@@ -23,10 +23,11 @@ $red: #BF301A;
   font-weight: normal;
   text-align: center;
   color: $red;
-  margin: 0 0 20px;
+  margin: 0 auto 20px;
   font-size: 47px;
   line-height: 60px;
   padding: 40px 0 0;
+  width: 1200px;
 
   a {
     color: inherit;
@@ -38,10 +39,10 @@ $red: #BF301A;
       content: 'Singing Bird Childcare';
       position: absolute;
       top: -9px;
-      left: 2px;
+      left: 0;
       color: white;
       text-shadow: 0 0 5px #666;
-      width: 100%;
+      width: 101%;
       z-index: -1;
     }
 
@@ -78,7 +79,7 @@ $red: #BF301A;
     text-align: center;
     color: white;
     font-size: 28px;
-    line-height: 36px;
+    line-height: 34px;
   }
 }
 
@@ -111,11 +112,16 @@ $red: #BF301A;
   }
 }
 
+.paper {
+  margin: 0 auto;
+  width: 1200px;
+}
+
 .intro, footer {
   width: 800px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 30px 125px;
+  padding: 30px 70px;
   position: relative;
   @include box-shadow(0 0 30px #999);
 
@@ -145,20 +151,22 @@ $red: #BF301A;
   font-size: 14px;
 
   .accent {
-    font-weight: bold;
+    @extend .serif;
+    /*font-weight: bold;*/
+    font-size: 1.5em;
     color: $red;
-    font-style: italic;
+    /*font-style: italic;*/
   }
 }
 
 footer {
   @include linear-gradient($lt-green, lighten($lt-green, 30%));
-  padding: 50px 125px 30px;
+  padding: 50px 70px 30px;
   @extend .sans;
 }
 
 .column1, .column2 {
-  width: 360px;
+  width: 375px;
   float: left;
 }
 
@@ -221,6 +229,17 @@ footer {
 
   .phone {
     margin-right: 30px;
+  }
+
+  .email {
+    position: relative;
+    &:before {
+      content: '·';
+      color: $green;
+      position: absolute;
+      left: -20px;
+      font-size: 30px;
+    }
   }
 
   .license {

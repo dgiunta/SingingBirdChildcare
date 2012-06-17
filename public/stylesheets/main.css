@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* normalize.css 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 /* =============================================================================
    HTML5 display definitions
@@ -434,21 +435,22 @@ table {
   font-weight: normal;
   font-style: normal; }
 
-.serif, .logo, .cta-container h2 {
+.serif, .logo, .cta-container h2, .intro .accent {
   font-family: 'MrsEavesBoldItalic', Georgia, TimesNewRoman, serif;
   font-weight: normal; }
 
 .sans, .button, footer {
-  font-family: "ronnia-condensed", 'LeagueGothic', Helvetica, sans-serif; }
+  font-family: "ronnia-condensed", Helvetica, sans-serif; }
 
 .logo {
   font-weight: normal;
   text-align: center;
   color: #bf301a;
-  margin: 0 0 20px;
+  margin: 0 auto 20px;
   font-size: 47px;
   line-height: 60px;
-  padding: 40px 0 0; }
+  padding: 40px 0 0;
+  width: 1200px; }
   .logo a {
     color: inherit;
     position: relative;
@@ -458,10 +460,10 @@ table {
       content: 'Singing Bird Childcare';
       position: absolute;
       top: -9px;
-      left: 2px;
+      left: 0;
       color: white;
       text-shadow: 0 0 5px #666;
-      width: 100%;
+      width: 101%;
       z-index: -1; }
     .logo a:after {
       content: '';
@@ -496,7 +498,7 @@ table {
     text-align: center;
     color: white;
     font-size: 28px;
-    line-height: 36px; }
+    line-height: 34px; }
 
 .button {
   position: absolute;
@@ -527,11 +529,15 @@ table {
     padding: 25px 0;
     display: inline-block; }
 
+.paper {
+  margin: 0 auto;
+  width: 1200px; }
+
 .intro, footer {
   width: 800px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 30px 125px;
+  padding: 30px 70px;
   position: relative;
   -webkit-box-shadow: 0 0 30px #999999;
   -moz-box-shadow: 0 0 30px #999999;
@@ -557,9 +563,10 @@ table {
   line-height: 22px;
   font-size: 14px; }
   .intro .accent {
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-size: 1.5em;
     color: #bf301a;
-    font-style: italic; }
+    /*font-style: italic;*/ }
 
 footer {
   background-color: #e7eebb;
@@ -569,10 +576,10 @@ footer {
   background-image: -ms-linear-gradient(top, #e7eebb, white);
   background-image: -o-linear-gradient(top, #e7eebb, white);
   background-image: linear-gradient(top, #e7eebb, white);
-  padding: 50px 125px 30px; }
+  padding: 50px 70px 30px; }
 
 .column1, .column2 {
-  width: 360px;
+  width: 375px;
   float: left; }
 
 .column2 {
@@ -632,6 +639,14 @@ footer {
     display: inline-block; }
   .contact .phone {
     margin-right: 30px; }
+  .contact .email {
+    position: relative; }
+    .contact .email:before {
+      content: '·';
+      color: #5b8727;
+      position: absolute;
+      left: -20px;
+      font-size: 30px; }
   .contact .license {
     margin: 10px auto 0;
     padding-top: 10px;
